@@ -192,7 +192,7 @@ func (c *SocketConnection) ReadMessage() (*Message, error) {
 	case msg := <-c.m:
 		return msg, nil
 	case <-time.After(100 * time.Millisecond):
-		Error("100 Millisecond over, timeover ...")
+		Debug("100 Millisecond over, timeover ...")
 		return nil, nil
 	}
 }
